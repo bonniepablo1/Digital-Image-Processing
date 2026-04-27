@@ -44,30 +44,49 @@ Summary of Findings & Parameter Impact
 Parameter Impact
 
 blur_sigma (Gaussian Smoothing): Crucial for balancing noise reduction and detail preservation.
+
 Low sigma leads to noisy, speckled edges.
+
 Optimal sigma provides clean edges while preserving fine details.
+
 High sigma causes over-smoothing, losing fine features.
+
 t_low and t_high (Hysteresis Thresholds): Control the sensitivity of edge detection.
+
 Lower thresholds are effective for images with subtle gradients (e.g., Medical, Fingerprint).
+
 Higher thresholds are suitable for images with distinct, strong edges (e.g., Satellite), filtering out weaker details.
 
 Domain-Specific Observations
 
 Medical Imaging (MRI): Requires careful blur_sigma tuning for subtle anatomical structures.
+
 Remote Sensing (Satellite): Handled well with moderate blur_sigma and thresholds for outlining features.
+
 Robot Vision: Effectively identifies object boundaries; highlights the challenge of differentiating structural vs. texture edges.
+
 Forensics (Fingerprint): Requires minimal blurring and very low thresholds to capture fine ridge patterns due to smooth gradients.
+
 Microscopic Imaging (Cells): Moderate parameters effectively isolate cellular outlines.
+
 JPEG Compression Artefacts: Canny is sensitive to compression-induced noise; heavily compressed images produce noisier, less coherent edge maps.
 
 Strengths of Canny
 
 Robustness: Effective across a wide variety of image types.
+
 Optimality: Designed for good detection, localization, and minimal response.
+
 Parameter Control: Tunable parameters allow adaptation to different image characteristics.
+
 Clear Output: Produces thin, clear edges.
+
 Limitations of Canny
+
 Parameter Sensitivity: Requires careful, often domain-specific, tuning.
+
 Sensitivity to Noise/Artefacts: Can generate spurious edges from noise or compression artefacts.
+
 Computational Cost: More intensive than simpler detectors.
+
 No Semantic Understanding: Identifies intensity discontinuities but not what the edges represent.
