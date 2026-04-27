@@ -4,15 +4,6 @@ Overview
 
 This repository contains the Google Colaboratory notebook for Digital Image Processing (DIP) Lab 2, focusing on the application and parameter tuning of the Canny edge detection algorithm across a variety of imaging domains. The lab explores how Canny edge detection performs in different contexts, highlighting the importance of parameters like Gaussian blur (blur_sigma) and hysteresis thresholds (t_low, t_high).
 
-Table of Contents
-
-Setup
-Lab Exercises / Domains Explored
-Core Functionality
-Summary of Findings & Parameter Impact
-Outputs
-Setup
-
 
 To run this notebook, you will need:
 
@@ -68,7 +59,9 @@ Robot Vision: Effectively identifies object boundaries; highlights the challenge
 Forensics (Fingerprint): Requires minimal blurring and very low thresholds to capture fine ridge patterns due to smooth gradients.
 Microscopic Imaging (Cells): Moderate parameters effectively isolate cellular outlines.
 JPEG Compression Artefacts: Canny is sensitive to compression-induced noise; heavily compressed images produce noisier, less coherent edge maps.
+
 Strengths of Canny
+
 Robustness: Effective across a wide variety of image types.
 Optimality: Designed for good detection, localization, and minimal response.
 Parameter Control: Tunable parameters allow adaptation to different image characteristics.
